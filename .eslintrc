@@ -1,8 +1,25 @@
 {
+  "env": {
+    "browser": true,
+    "node": true
+  },
   "parser": "@babel/eslint-parser",
   "extends": ["airbnb", "prettier"],
   "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": ["error"]
-  }
+    "prettier/prettier": ["warn"],
+    "react/react-in-jsx-scope" : "off",
+    "react/jsx-filename-extension" : "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
+    },
+    "react":  {
+      "version":  "detect"  // Tells eslint-plugin-react to automatically detect the version of React to use
+    }
+  },
+  "ignorePatterns": ["node_modules", "webpack.config.js"]
 }
